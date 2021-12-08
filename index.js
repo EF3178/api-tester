@@ -21,12 +21,21 @@ app.listen(port ,() => {
 });
 
 
-app.post("/test", (req, res, next) => {
+app.post("/return_text", (req, res, next) => {
 	try {
 		res.json({"your_request" : JSON.stringify({"headers" : req.headers, "body" : req.body})})
     } catch (error) {
         res.status(500).json({
             error: error.message,
+        });
+    }
+});
+app.post("/return_JSON", (req, res, next) => {
+	try {
+		res.json({"headers" : req.headers, "body" : req.body})
+    } catch (error) {
+        res.status(500).json({
+            error: error.message
         });
     }
 });
