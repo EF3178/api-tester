@@ -23,7 +23,7 @@ app.listen(port ,() => {
 
 app.post("/test", (req, res, next) => {
 	try {
-		res.json({"headers" : req.headers, "body" : req.body})
+		res.json({"your_request" : {"headers" : req.headers, "body" : req.body}})
     } catch (error) {
         res.status(500).json({
             error: error.message,
