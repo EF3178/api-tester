@@ -32,6 +32,7 @@ app.post("/return_text", (req, res, next) => {
 });
 app.post("/return_JSON", (req, res, next) => {
 	try {
+        console.log(JSON.stringify(req.body))
 		res.json({"headers" : req.headers, "body" : req.body})
     } catch (error) {
         res.status(500).json({
